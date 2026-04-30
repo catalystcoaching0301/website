@@ -375,7 +375,7 @@
   }
 
   .pain-inner {
-    max-width: 900px;
+    max-width: 1100px;
     margin: 0 auto;
   }
 
@@ -401,13 +401,6 @@
   .pain-card:hover {
     transform: translateY(-4px);
     box-shadow: 0 12px 32px rgba(61,107,95,0.1);
-  }
-
-  .pain-card-check {
-    font-size: 1.1rem;
-    color: var(--sea);
-    margin-bottom: 0.6rem;
-    display: block;
   }
 
   .pain-card p {
@@ -459,64 +452,53 @@
 
   .flow-step {
     flex: 1;
-    min-width: 200px;
-    max-width: 260px;
+    min-width: 220px;
+    max-width: 280px;
     text-align: center;
-    padding: 2rem 1rem;
-  }
-
-  .flow-icon-wrap {
-    width: 80px;
-    height: 80px;
-    background: linear-gradient(135deg, var(--ocean), var(--forest));
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 1.2rem;
-    transition: transform 0.3s;
-  }
-
-  .flow-step:hover .flow-icon-wrap {
-    transform: scale(1.08);
-  }
-
-  .flow-icon-wrap i {
-    font-size: 1.6rem;
-    color: var(--white);
+    padding: 2rem 1.2rem;
   }
 
   .flow-step-num {
-    font-size: 0.7rem;
-    letter-spacing: 0.2em;
+    font-size: 1rem;
+    letter-spacing: 0.25em;
     color: var(--sea);
-    font-weight: 400;
+    font-weight: 600;
     display: block;
-    margin-bottom: 0.4rem;
+    margin-bottom: 0.6rem;
   }
 
   .flow-step h3 {
     font-family: var(--font-serif);
-    font-size: 1.1rem;
+    font-size: 1.6rem;
     color: var(--forest-dark);
-    margin-bottom: 0.6rem;
-    font-weight: 600;
+    margin-bottom: 0.8rem;
+    font-weight: 700;
     letter-spacing: 0.04em;
+    line-height: 1.3;
+    min-height: 4.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .flow-step p {
-    font-size: 0.85rem;
+    font-size: 0.88rem;
     color: var(--ink-light);
-    line-height: 1.8;
+    line-height: 1.9;
     font-weight: 300;
+    max-width: 260px;
+    margin: 0 auto;
   }
 
-  .flow-arrow {
-    font-size: 1.2rem;
+  .flow-sep {
+    font-size: 1.6rem;
     color: var(--sea-light);
-    padding-top: 2.8rem;
+    padding-top: 1rem;
     flex-shrink: 0;
+    align-self: center;
   }
+
+
 
   .service-detail {
     background: var(--white);
@@ -533,14 +515,8 @@
     color: var(--forest);
     margin-bottom: 0.5rem;
     font-weight: 600;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-
-  .service-detail-item h4 i {
-    color: var(--ember);
-    font-size: 0.9rem;
+    padding-left: 0.8rem;
+    border-left: 3px solid var(--ember);
   }
 
   .service-detail-item p {
@@ -867,7 +843,7 @@
     .nav-hamburger { display: flex; }
 
     .flow-steps { flex-direction: column; align-items: center; }
-    .flow-arrow { transform: rotate(90deg); padding: 0; margin: -0.5rem 0; }
+    .flow-sep { font-size: 1.4rem; transform: rotate(90deg); padding: 0; margin: -0.5rem 0; }
 
     .about-inner {
       grid-template-columns: 1fr;
@@ -884,6 +860,212 @@
   }
 
 
+
+  /* ─── PRIVACY POLICY MODAL ─── */
+  .modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(20, 35, 28, 0.7);
+    backdrop-filter: blur(6px);
+    z-index: 9000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+  }
+  .modal-overlay.open {
+    opacity: 1;
+    visibility: visible;
+  }
+  .modal-box {
+    background: var(--sand-light);
+    border-radius: 20px;
+    max-width: 720px;
+    width: 100%;
+    max-height: 85vh;
+    overflow-y: auto;
+    padding: 3rem 3.5rem;
+    position: relative;
+    box-shadow: 0 24px 80px rgba(20,35,28,0.3);
+  }
+  .modal-box h2 {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    color: var(--forest-dark);
+    margin-bottom: 0.4rem;
+    letter-spacing: 0.04em;
+  }
+  .modal-box .modal-date {
+    font-size: 0.78rem;
+    color: var(--ink-light);
+    letter-spacing: 0.1em;
+    margin-bottom: 2rem;
+    display: block;
+  }
+  .modal-box h3 {
+    font-family: var(--font-serif);
+    font-size: 1rem;
+    color: var(--forest);
+    margin: 1.8rem 0 0.5rem;
+    font-weight: 600;
+  }
+  .modal-box p, .modal-box li {
+    font-size: 0.88rem;
+    color: var(--ink-light);
+    line-height: 2;
+    font-weight: 300;
+  }
+  .modal-box ul {
+    padding-left: 1.4rem;
+    margin-top: 0.4rem;
+  }
+  .modal-box li { margin-bottom: 0.3rem; }
+  .modal-close {
+    position: absolute;
+    top: 1.2rem;
+    right: 1.5rem;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--ink-light);
+    cursor: pointer;
+    line-height: 1;
+    padding: 4px 8px;
+    border-radius: 8px;
+    transition: background 0.2s;
+  }
+  .modal-close:hover { background: var(--sand-dark); }
+  .privacy-link {
+    color: rgba(255,255,255,0.5);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    cursor: pointer;
+    font-size: 0.78rem;
+    background: none;
+    border: none;
+    letter-spacing: 0.1em;
+    transition: color 0.2s;
+    font-family: var(--font-sans);
+  }
+  .privacy-link:hover { color: rgba(255,255,255,0.85); }
+
+  @media (max-width: 600px) {
+    .modal-box { padding: 2rem 1.6rem; }
+  }
+
+
+  /* ─── FAQ ─── */
+  #faq {
+    background: var(--white);
+    padding-top: 0;
+  }
+
+  .faq-inner {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .faq-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .faq-item {
+    border: 1px solid var(--sand-dark);
+    border-radius: 14px;
+    overflow: hidden;
+    transition: box-shadow 0.25s;
+    background: var(--sand-light);
+  }
+
+  .faq-item:hover {
+    box-shadow: 0 4px 20px rgba(42,107,138,0.08);
+  }
+
+  .faq-question {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 1.4rem 1.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    cursor: pointer;
+    text-align: left;
+  }
+
+  .faq-question-text {
+    font-family: var(--font-serif);
+    font-size: 1rem;
+    color: var(--forest-dark);
+    font-weight: 600;
+    line-height: 1.6;
+    letter-spacing: 0.02em;
+  }
+
+  .faq-question-text::before {
+    content: 'Q. ';
+    color: var(--ocean);
+    font-weight: 700;
+  }
+
+  .faq-icon {
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--sand-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.25s, transform 0.3s;
+    color: var(--forest);
+    font-size: 0.75rem;
+  }
+
+  .faq-item.open .faq-icon {
+    background: var(--forest);
+    color: var(--white);
+    transform: rotate(45deg);
+  }
+
+  .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease, padding 0.3s;
+    padding: 0 1.8rem;
+  }
+
+  .faq-item.open .faq-answer {
+    max-height: 400px;
+    padding: 0 1.8rem 1.4rem;
+  }
+
+  .faq-answer p {
+    font-size: 0.9rem;
+    color: var(--ink-light);
+    line-height: 2;
+    font-weight: 300;
+    border-top: 1px solid var(--sand-dark);
+    padding-top: 1.2rem;
+  }
+
+  .faq-answer p::before {
+    content: 'A. ';
+    color: var(--ember);
+    font-weight: 600;
+  }
+
 </style>
 </head>
 
@@ -897,7 +1079,7 @@
       <li><a href="#home">Home</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#service">Service</a></li>
-      <li><a href="https://forms.gle/9uG6J2RtGMb52Af27" target="_blank" class="nav-cta">体験セッションを予約する</a></li>
+      <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdHPMuYmle2Azwn0ioiltbI3UJIJKSSWzjALthtYapuen7e4A/viewform" target="_blank" class="nav-cta">体験セッションを予約する</a></li>
     </ul>
   </div>
   <button class="nav-hamburger" id="hamburger" aria-label="メニュー">
@@ -939,27 +1121,21 @@
     </div>
     <div class="pain-grid">
       <div class="pain-card" data-aos="fade-up" data-aos-delay="0">
-        <span class="pain-card-check"><i class="fa-solid fa-check"></i></span>
         <p>結果は出している。でも何か物足りなさを感じている。</p>
       </div>
       <div class="pain-card" data-aos="fade-up" data-aos-delay="80">
-        <span class="pain-card-check"><i class="fa-solid fa-check"></i></span>
         <p>頑張り続けているのに、どこかで止まってしまっている。</p>
       </div>
       <div class="pain-card" data-aos="fade-up" data-aos-delay="160">
-        <span class="pain-card-check"><i class="fa-solid fa-check"></i></span>
         <p>「本当にやりたいこと」が、わからなくなってきた。</p>
       </div>
       <div class="pain-card" data-aos="fade-up" data-aos-delay="240">
-        <span class="pain-card-check"><i class="fa-solid fa-check"></i></span>
         <p>論理では出ない答えに向き合いたいが、一人では難しい。</p>
       </div>
       <div class="pain-card" data-aos="fade-up" data-aos-delay="320">
-        <span class="pain-card-check"><i class="fa-solid fa-check"></i></span>
         <p>自分の感情に気づかないまま、鎧を纏って生きてきた気がする。</p>
       </div>
       <div class="pain-card" data-aos="fade-up" data-aos-delay="400">
-        <span class="pain-card-check"><i class="fa-solid fa-check"></i></span>
         <p>誰かに話したい。でも、誰に話せばいいかわからなかった。</p>
       </div>
     </div>
@@ -976,57 +1152,121 @@
       <span class="section-label">Service</span>
       <h2 class="section-title">コーチングの流れ</h2>
       <div class="section-divider" style="margin: 1.5rem auto;"></div>
-      <p class="section-lead">難しくありません。ただ、話しに来てください。</p>
+      <p class="section-lead">難しくありません。お話をしに、気軽にお立ち寄りください。</p>
     </div>
 
     <div class="flow-steps">
       <div class="flow-step" data-aos="fade-up" data-aos-delay="0">
-        <div class="flow-icon-wrap"><i class="fa-regular fa-calendar-check"></i></div>
         <span class="flow-step-num">STEP 01</span>
         <h3>予約</h3>
-        <p>フォームから体験セッションを予約。まずは気軽に申し込んでください。</p>
+        <p style="font-size:0.78rem;">フォームから体験セッションを<br>予約。まずは気軽に<br>申し込んでください。</p>
       </div>
-      <div class="flow-arrow" data-aos="fade-up" data-aos-delay="80">
-        <i class="fa-solid fa-chevron-right"></i>
-      </div>
+      <div class="flow-sep" data-aos="fade-up" data-aos-delay="80">&#8594;</div>
       <div class="flow-step" data-aos="fade-up" data-aos-delay="160">
-        <div class="flow-icon-wrap"><i class="fa-regular fa-envelope-open"></i></div>
         <span class="flow-step-num">STEP 02</span>
-        <h3>事前シェア（任意）</h3>
-        <p>今、気になっていることを少しだけ教えてください。準備がなくても大丈夫。</p>
+        <h3>事前シェア<br>（任意）</h3>
+        <p style="font-size:0.78rem;">今、気になっていることを<br>少しだけ教えてください。<br>準備がなくても大丈夫。</p>
       </div>
-      <div class="flow-arrow" data-aos="fade-up" data-aos-delay="240">
-        <i class="fa-solid fa-chevron-right"></i>
-      </div>
+      <div class="flow-sep" data-aos="fade-up" data-aos-delay="240">&#8594;</div>
       <div class="flow-step" data-aos="fade-up" data-aos-delay="320">
-        <div class="flow-icon-wrap"><i class="fa-regular fa-comments"></i></div>
         <span class="flow-step-num">STEP 03</span>
         <h3>セッション当日</h3>
-        <p>オンラインで60分。向かい合わず、ゆっくりと。あなたのペースで話してください。</p>
+        <p style="font-size:0.78rem;">オンラインで60分。<br>向かい合わず、ゆっくりと。<br>あなたのペースで話してください。</p>
       </div>
     </div>
 
     <div class="service-detail" data-aos="fade-up">
       <div class="service-detail-item">
-        <h4><i class="fa-solid fa-circle-dot"></i> 形式・時間</h4>
+        <h4>形式・時間</h4>
         <p>オンライン（Zoom等）<br>1セッション 約60分</p>
       </div>
       <div class="service-detail-item">
-        <h4><i class="fa-solid fa-circle-dot"></i> 対象の方</h4>
+        <h4>対象の方</h4>
         <p>会社員・勤め人など<br>年代・性別問わず</p>
       </div>
-      <div class="service-detail-item">
-        <h4><i class="fa-solid fa-circle-dot"></i> 体験セッション</h4>
+      <div class="service-detail-item" style="grid-column: 1 / -1;">
+        <h4>体験セッション</h4>
         <p>まず一度、話してみることを大切にしています。お気軽にどうぞ。</p>
       </div>
-      <div class="service-detail-item">
-        <h4><i class="fa-solid fa-circle-dot"></i> お問い合わせ</h4>
-        <p><a href="mailto:catalystcoaching0301@gmail.com" style="color:var(--forest);text-decoration:none;">catalystcoaching0301<br>@gmail.com</a></p>
-      </div>
+
     </div>
   </div>
 </section>
 
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="faq-inner">
+    <div class="faq-header" data-aos="fade-up">
+      <span class="section-label">FAQ</span>
+      <h2 class="section-title">よくあるご質問</h2>
+      <div class="section-divider" style="margin: 1.5rem auto;"></div>
+    </div>
+    <div class="faq-list">
+
+      <div class="faq-item" data-aos="fade-up" data-aos-delay="0">
+        <button class="faq-question" aria-expanded="false">
+          <span class="faq-question-text">コーチングとカウンセリングは何が違いますか？</span>
+          <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+        </button>
+        <div class="faq-answer">
+          <p>カウンセリングは過去の傷や悩みを癒すことに重点を置きますが、コーチングは「これからどうありたいか」という未来に焦点を当てます。答えを与えるのではなく、あなた自身の中にある答えを一緒に引き出していくプロセスです。</p>
+        </div>
+      </div>
+
+      <div class="faq-item" data-aos="fade-up" data-aos-delay="60">
+        <button class="faq-question" aria-expanded="false">
+          <span class="faq-question-text">具体的な悩みがなくても受けられますか？</span>
+          <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+        </button>
+        <div class="faq-answer">
+          <p>はい、大丈夫です。「なんとなくモヤモヤしている」「何かが変わりたいけど言葉にできない」という状態からでもセッションは始められます。テーマは一緒に見つけていきますので、準備は何もいりません。</p>
+        </div>
+      </div>
+
+      <div class="faq-item" data-aos="fade-up" data-aos-delay="120">
+        <button class="faq-question" aria-expanded="false">
+          <span class="faq-question-text">体験セッションはどのような内容ですか？</span>
+          <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+        </button>
+        <div class="faq-answer">
+          <p>オンラインで約60分のセッションです。自己紹介やコーチングの説明のあと、実際に短いコーチングを体験していただきます。「コーチングがどんなものか試してみたい」という方にぴったりの内容です。無理な勧誘は一切ありません。</p>
+        </div>
+      </div>
+
+      <div class="faq-item" data-aos="fade-up" data-aos-delay="180">
+        <button class="faq-question" aria-expanded="false">
+          <span class="faq-question-text">話した内容は外部に漏れませんか？</span>
+          <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+        </button>
+        <div class="faq-answer">
+          <p>セッションの内容は厳格な守秘義務のもとで管理されます。ご本人の許可なく第三者に開示することは一切ありません。安心してお話しください。</p>
+        </div>
+      </div>
+
+      <div class="faq-item" data-aos="fade-up" data-aos-delay="240">
+        <button class="faq-question" aria-expanded="false">
+          <span class="faq-question-text">継続するには何回くらい必要ですか？</span>
+          <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+        </button>
+        <div class="faq-answer">
+          <p>テーマや目標によって異なりますが、一般的には月2回のペースで3〜6ヶ月程度を目安にしている方が多いです。まずは体験セッションを受けていただき、継続の必要性はそこで一緒に考えましょう。</p>
+        </div>
+      </div>
+
+      <div class="faq-item" data-aos="fade-up" data-aos-delay="300">
+        <button class="faq-question" aria-expanded="false">
+          <span class="faq-question-text">どんな人が受けに来ていますか？</span>
+          <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+        </button>
+        <div class="faq-answer">
+          <p>会社員・管理職・フリーランスなど、年代・性別を問わずさまざまな方がいらっしゃいます。共通しているのは「真剣に自分と向き合いたい」という気持ちです。特別な悩みがなくても、ご自身をもっと知りたいという方も多くいらっしゃいます。</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
 
 <!-- PROFILE / ABOUT -->
 <section id="about">
@@ -1092,25 +1332,23 @@
 <!-- CTA -->
 <section id="contact">
   <div class="cta-inner">
-    <span class="cta-icon" data-aos="zoom-in"><i class="fa-solid fa-mug-hot"></i></span>
-    <h2 class="cta-title" data-aos="fade-up">まず、話してみませんか。</h2>
+    <h2 class="cta-title" data-aos="fade-up">まず、お話してみませんか？</h2>
     <p class="cta-sub" data-aos="fade-up" data-aos-delay="100">
       準備は何もいりません。<br>
       「なんとなくモヤモヤしている」それだけで、十分です。<br>
       ここに来てくれたこと、それがすでに一歩です。
     </p>
     <div data-aos="fade-up" data-aos-delay="200">
-      <a href="https://forms.gle/9uG6J2RtGMb52Af27" target="_blank" class="btn-primary" style="font-size:1rem; padding: 18px 40px;">
-        <i class="fa-regular fa-calendar"></i>&nbsp; 体験セッションを予約する
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSdHPMuYmle2Azwn0ioiltbI3UJIJKSSWzjALthtYapuen7e4A/viewform" target="_blank" class="btn-primary" style="font-size:1rem; padding: 18px 40px;">
+        体験セッションを予約する
       </a>
     </div>
     <p class="cta-note" data-aos="fade-up" data-aos-delay="300">
-      <i class="fa-regular fa-envelope"></i>
-      <a href="mailto:catalystcoaching0301@gmail.com" style="color:inherit;text-decoration:none;">catalystcoaching0301@gmail.com</a>
+      各種お問い合わせは、通常48時間以内に返信いたします。
     </p>
-    <p class="cta-dog-note" data-aos="fade-up" data-aos-delay="400">
-      🐾 最後に、小さなキーホルダーをお渡しします。<br>人類の友として、あなたの旅を見守ってくれますように。
-    </p>
+    </div>
+
+
   </div>
 </section>
 
@@ -1118,10 +1356,11 @@
 <footer>
   <span class="footer-logo">Catalyst Coaching Studio</span>
   <p>ライフコーチ　たいさん</p>
-  <p style="margin-top:0.4rem;">
-    <a href="mailto:catalystcoaching0301@gmail.com">catalystcoaching0301@gmail.com</a>
-  </p>
+
   <p style="margin-top:1rem;">&copy; 2025 Catalyst Coaching Studio. All rights reserved.</p>
+  <p style="margin-top:0.6rem;">
+    <button class="privacy-link" id="privacyBtn">プライバシーポリシー</button>
+  </p>
 </footer>
 
 <!-- AOS -->
@@ -1150,6 +1389,106 @@
   // Close nav on link click
   navLinks.querySelectorAll('a').forEach(a => {
     a.addEventListener('click', () => navLinks.classList.remove('open'));
+  });
+
+
+</script>
+
+<!-- PRIVACY POLICY MODAL -->
+<div class="modal-overlay" id="privacyModal" role="dialog" aria-modal="true" aria-label="プライバシーポリシー">
+  <div class="modal-box">
+    <button class="modal-close" id="modalClose" aria-label="閉じる">&times;</button>
+    <h2>プライバシーポリシー</h2>
+    <span class="modal-date">制定日：2025年1月1日</span>
+
+    <p>Catalyst Coaching Studio（以下「当スタジオ」）は、コーチングサービスの提供にあたり、お客様の個人情報を適切に取り扱うことを重要な責務と考えております。本プライバシーポリシーは、当スタジオが収集・利用・管理する個人情報の取り扱いについて定めるものです。</p>
+
+    <h3>1. 収集する個人情報</h3>
+    <p>当スタジオは、以下の情報をお客様からご提供いただく場合があります。</p>
+    <ul>
+      <li>氏名・ニックネーム</li>
+      <li>メールアドレス</li>
+      <li>お問い合わせ・セッション申込みの際にご記入いただいた内容</li>
+      <li>セッション中にお話しいただいた内容（守秘義務のもと管理します）</li>
+    </ul>
+
+    <h3>2. 個人情報の利用目的</h3>
+    <p>収集した個人情報は、以下の目的にのみ使用します。</p>
+    <ul>
+      <li>コーチングセッションの予約・実施・フォローアップ</li>
+      <li>お問い合わせへの回答</li>
+      <li>サービスに関するご連絡（ご同意いただいた場合のみ）</li>
+      <li>サービス品質の向上のための内部分析</li>
+    </ul>
+
+    <h3>3. 個人情報の第三者提供</h3>
+    <p>当スタジオは、以下の場合を除き、お客様の個人情報を第三者に提供・開示・共有しません。</p>
+    <ul>
+      <li>お客様ご本人の事前の同意がある場合</li>
+      <li>法令に基づき開示が義務付けられる場合</li>
+      <li>お客様または第三者の生命・身体・財産を保護するために必要な場合</li>
+    </ul>
+
+    <h3>4. 守秘義務</h3>
+    <p>コーチングセッションにおいてお話しいただいた内容は、厳格な守秘義務のもと管理します。クライアントの同意なく、セッション内容を第三者に開示することは一切ありません。ただし、クライアント自身または第三者の安全に関わる緊急事態においては、この限りではありません。</p>
+
+    <h3>5. 個人情報の管理・保管</h3>
+    <p>当スタジオは、個人情報への不正アクセス・紛失・改ざん・漏えい等を防止するため、適切な安全管理措置を講じます。保管が不要となった個人情報は、速やかに適切な方法で削除・廃棄します。</p>
+
+    <h3>6. Googleフォームの利用について</h3>
+    <p>お問い合わせ・予約フォームにはGoogleフォームを使用しています。入力情報はGoogleのサーバーに保存されます。Googleのプライバシーポリシーについては、<a href="https://policies.google.com/privacy" target="_blank" rel="noopener" style="color:var(--forest);">Google プライバシーポリシー</a>をご参照ください。</p>
+
+    <h3>7. 個人情報の開示・訂正・削除</h3>
+    <p>お客様は、当スタジオが保有するご自身の個人情報について、開示・訂正・削除を請求する権利を有します。ご希望の場合は、下記お問い合わせ先までご連絡ください。</p>
+
+    <h3>8. プライバシーポリシーの変更</h3>
+    <p>本ポリシーは、法令の改正やサービス内容の変更に伴い、予告なく改定する場合があります。最新の内容は当サイト上に掲載します。</p>
+
+    <h3>9. お問い合わせ</h3>
+    <p>本ポリシーに関するお問い合わせは、以下までご連絡ください。</p>
+    <p style="margin-top:0.6rem;">
+      Catalyst Coaching Studio　ライフコーチ たいさん<br>
+      お問い合わせフォームよりご連絡ください。
+    </p>
+  </div>
+</div>
+
+
+<script>
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      // Close all
+      document.querySelectorAll('.faq-item').forEach(i => {
+        i.classList.remove('open');
+        i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+      });
+      // Open clicked if it was closed
+      if (!isOpen) {
+        item.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+
+  // Privacy modal
+  document.getElementById('privacyBtn').addEventListener('click', () => {
+    document.getElementById('privacyModal').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  });
+  function closePrivacyModal() {
+    document.getElementById('privacyModal').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  document.getElementById('modalClose').addEventListener('click', closePrivacyModal);
+  document.getElementById('privacyModal').addEventListener('click', function(e) {
+    if (e.target === this) closePrivacyModal();
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closePrivacyModal();
   });
 </script>
 </body>
