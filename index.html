@@ -228,6 +228,17 @@
     font-weight: 600;
   }
 
+  @media (max-width: 768px) {
+    .hero-catch {
+      font-size: 1.75rem;
+      letter-spacing: 0.02em;
+    }
+    .hero-sub {
+      font-size: 0.95rem;
+      letter-spacing: 0.06em;
+    }
+  }
+
   .hero-catch em {
     font-style: normal;
     color: var(--ember);
@@ -343,6 +354,12 @@
     font-weight: 600;
   }
 
+  @media (max-width: 768px) {
+    .section-title {
+      font-size: 1.3rem;
+    }
+  }
+
   .section-lead {
     font-size: 1rem;
     color: var(--ink-light);
@@ -422,6 +439,12 @@
     padding: 2.5rem;
     background: linear-gradient(135deg, rgba(42,107,138,0.06), rgba(46,107,79,0.07));
     border-radius: 20px;
+  }
+
+  @media (max-width: 768px) {
+    .pain-closing {
+      text-align: left;
+    }
   }
 
   .pain-closing p {
@@ -764,6 +787,12 @@
     letter-spacing: 0.04em;
   }
 
+  @media (max-width: 768px) {
+    .cta-title {
+      font-size: 1.35rem;
+    }
+  }
+
   .cta-sub {
     font-size: 0.92rem;
     color: var(--ink-light);
@@ -969,6 +998,150 @@
   }
 
 
+  /* ─── TARGET ─── */
+  #target {
+    background: linear-gradient(160deg, var(--forest-dark) 0%, #1a3d52 100%);
+    padding: 80px 5%;
+  }
+
+  .target-inner {
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  .target-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .target-header .section-label { color: var(--sea-light); }
+  .target-header .section-title { color: var(--white); }
+  .target-header .section-divider { background: var(--ember); }
+
+  .target-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .target-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: transform 0.3s, background 0.3s;
+  }
+
+  .target-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255,255,255,0.1);
+  }
+
+  .target-card-inner {
+    padding: 2rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .target-tag {
+    display: inline-block;
+    background: var(--ember);
+    color: var(--white);
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    padding: 8px 24px;
+    border-radius: 30px;
+    margin-bottom: 1.4rem;
+  }
+
+  .target-desc {
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    color: rgba(255,255,255,0.88);
+    line-height: 2;
+    letter-spacing: 0.03em;
+    max-width: 640px;
+  }
+
+  .target-desc em {
+    font-style: normal;
+    color: var(--sky-light);
+    font-weight: 600;
+    border-bottom: 1px solid rgba(168,207,224,0.4);
+  }
+
+  @media (max-width: 768px) {
+    .target-grid {
+      grid-template-columns: 1fr;
+    }
+    .target-desc {
+      font-size: 0.95rem;
+    }
+  }
+
+  /* ─── PRICING ─── */
+  .pricing-card {
+    margin-top: 0.8rem;
+    background: linear-gradient(135deg, var(--sand-light), var(--sky-light));
+    border: 1px solid var(--sea-light);
+    border-radius: 14px;
+    padding: 1.6rem 2rem;
+    max-width: 480px;
+  }
+
+  .pricing-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(42,107,138,0.15);
+  }
+
+  .pricing-name {
+    font-family: var(--font-serif);
+    font-size: 1.05rem;
+    color: var(--forest-dark);
+    font-weight: 600;
+    letter-spacing: 0.04em;
+  }
+
+  .pricing-price {
+    font-family: var(--font-serif);
+    font-size: 1.4rem;
+    color: var(--ember);
+    font-weight: 700;
+    letter-spacing: 0.02em;
+  }
+
+  .pricing-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .pricing-list li {
+    font-size: 0.88rem;
+    color: var(--ink-light);
+    padding-left: 1.2rem;
+    position: relative;
+    line-height: 1.8;
+  }
+
+  .pricing-list li::before {
+    content: '－';
+    position: absolute;
+    left: 0;
+    color: var(--sea);
+  }
+
   /* ─── FAQ ─── */
   #faq {
     background: var(--white);
@@ -1100,7 +1273,7 @@
       <li><a href="#home">Home</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#service">Service</a></li>
-      <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdHPMuYmle2Azwn0ioiltbI3UJIJKSSWzjALthtYapuen7e4A/viewform" target="_blank" class="nav-cta">体験セッションを予約する</a></li>
+      <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdHaSTZiwfaHkVVjBJLi3NZd-VRkKYSbN_W7O3REYguTdQiSA/viewform?usp=header" target="_blank" class="nav-cta">無料体験セッションを予約する</a></li>
     </ul>
   </div>
   <button class="nav-hamburger" id="hamburger" aria-label="メニュー">
@@ -1166,6 +1339,34 @@
   </div>
 </section>
 
+<!-- TARGET -->
+<section id="target">
+  <div class="target-inner">
+    <div class="target-header" data-aos="fade-up">
+      <span class="section-label">For You</span>
+      <h2 class="section-title">こんな方へ</h2>
+      <div class="section-divider" style="margin: 1.5rem auto;"></div>
+    </div>
+    <div class="target-grid">
+
+      <div class="target-card" data-aos="fade-up" data-aos-delay="0">
+        <div class="target-card-inner">
+          <div class="target-tag">キャリアコーチング</div>
+          <p class="target-desc">今後の自分のキャリアが気になるけど、<br>いつもループにはまりくるくる<br>同じところを回っている<br><em>ミドルエイジ</em>の方</p>
+        </div>
+      </div>
+
+      <div class="target-card" data-aos="fade-up" data-aos-delay="120">
+        <div class="target-card-inner">
+          <div class="target-tag">マネジメントコーチング</div>
+          <p class="target-desc">部下を持つ立場になったけど、<br>思ったようにチームパフォーマンスが<br>上がらなくて焦っている<br><em>マネジメント</em>の方</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- SERVICE -->
 <section id="service">
   <div class="service-inner">
@@ -1208,6 +1409,19 @@
       <div class="service-detail-item" style="grid-column: 1 / -1;">
         <h4>体験セッション</h4>
         <p>まず一度、話してみることを大切にしています。お気軽にどうぞ。</p>
+      </div>
+      <div class="service-detail-item service-pricing" style="grid-column: 1 / -1;" data-aos="fade-up">
+        <h4>料金コース</h4>
+        <div class="pricing-card">
+          <div class="pricing-header">
+            <span class="pricing-name">３か月伴走プラン</span>
+            <span class="pricing-price">¥90,000</span>
+          </div>
+          <ul class="pricing-list">
+            <li>導入セッション　90分 × 1回</li>
+            <li>コーチングセッション　60分 × 6回</li>
+          </ul>
+        </div>
       </div>
 
     </div>
@@ -1356,12 +1570,13 @@
     <h2 class="cta-title" data-aos="fade-up">まずは、お話してみませんか？</h2>
     <p class="cta-sub" data-aos="fade-up" data-aos-delay="100">
       準備は何もいりません。<br>
-      「なんとなくモヤモヤしている」それだけで、十分です。<br>
+      「なんとなくモヤモヤしている」<br>
+      それだけで、十分です。<br>
       ここに来てくれたこと、それがすでに一歩です。
     </p>
     <div data-aos="fade-up" data-aos-delay="200">
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSdHPMuYmle2Azwn0ioiltbI3UJIJKSSWzjALthtYapuen7e4A/viewform" target="_blank" class="btn-primary" style="font-size:1rem; padding: 18px 40px;">
-        体験セッションを予約する
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSdHaSTZiwfaHkVVjBJLi3NZd-VRkKYSbN_W7O3REYguTdQiSA/viewform?usp=header" target="_blank" class="btn-primary" style="font-size:1rem; padding: 18px 40px;">
+        無料体験セッションを予約する
       </a>
     </div>
     <p class="cta-note" data-aos="fade-up" data-aos-delay="300">
